@@ -1,37 +1,33 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
-   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabian Roth | Honig aus Leimen</title>
-    <link relvg
+
+    <title>Imkerei Röderhof | Fabian Roth</title>
+
+    favicon.svg
+
     <style>
         body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-
-    background-color: #fff8dc;
-
-    background-image:
-        linear-gradient(30deg, #f2c94c 12%, transparent 12.5%, transparent 87%, #f2c94c 87.5%, #f2c94c),
-        linear-gradient(150deg, #f2c94c 12%, transparent 12.5%, transparent 87%, #f2c94c 87.5%, #f2c94c),
-        linear-gradient(90deg, #f5d76e 2%, transparent 2.5%, transparent 97%, #f5d76e 98%);
-    background-size: 80px 140px;
-
-    color: #333;
-}
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff8dc;
+            color: #333;
+        }
 
         header {
             background: #d4a017;
             color: white;
             text-align: center;
-            padding: 50px 20px;
+            padding: 60px 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
 
         main {
-            max-width: 800px;
+            max-width: 900px;
             margin: 40px auto;
             padding: 0 20px;
         }
@@ -40,11 +36,12 @@
             background: white;
             padding: 25px;
             margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
 
-        h1, h2 {
+        h1,
+        h2 {
             margin-top: 0;
         }
 
@@ -52,79 +49,114 @@
             line-height: 1.8;
         }
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            color: #666;
-            font-size: 0.9em;
-        }
-
         a {
             color: #d4a017;
             text-decoration: none;
+            font-weight: bold;
         }
 
         a:hover {
             text-decoration: underline;
         }
-    .bee {
-    position: fixed;
-    font-size: 40px;
-    z-index: 1000;
-    pointer-events: none;
 
-    animation:
-        fly 20s linear infinite,
-        flap 0.2s ease-in-out infinite alternate;
-}
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+        }
 
-@keyframes flap {
-    from {
-        transform: scale(1);
-    }
+        .bee {
+            position: fixed;
+            font-size: 36px;
+            z-index: 1000;
+            pointer-events: none;
+            animation:
+                fly 18s linear infinite,
+                flap 0.2s ease-in-out infinite alternate;
+        }
 
-    to {
-        transform: scale(1.1);
-    }
-}
+        @keyframes fly {
+            0% {
+                left: -50px;
+                top: 120px;
+            }
+
+            25% {
+                left: 25%;
+                top: 220px;
+            }
+
+            50% {
+                left: 50%;
+                top: 80px;
+            }
+
+            75% {
+                left: 75%;
+                top: 250px;
+            }
+
+            100% {
+                left: 110%;
+                top: 150px;
+            }
+        }
+
+        @keyframes flap {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.1);
+            }
+        }
     </style>
 </head>
+
 <body>
-<div class="bee">🐝</div>
-<header>
-    <h1>Fabian Roth</h1>
-    <p>Regionaler Honig aus Leimen</p>
-</header>
 
-<main>
+    <div class="bee">🐝</div>
 
-    <section>
-        <h2>Willkommen</h2>
-        <p>
-            Ich biete hochwertigen Honig aus eigener Imkerei an.
-            Bei Interesse oder Fragen freue ich mich über Ihre Kontaktaufnahme.
-        </p>
-    </section>
+    <header>
+        <h1>Imkerei Röderhof</h1>
+        <p>Regionaler Honig aus Leimen</p>
+    </header>
 
-    <section>
-        <h2>Kontakt</h2>
-        <div class="contact">
-            <strong>Fabian Roth</strong><br>
-            Röderhof 11<br>
-            66978 Leimen<br><br>
+    <main>
 
-        <p>   
-            Telefon:
-            <a href="tel:+4915787309872">+4915787309872</a>
-        </p>        
-        </div>
-    </section>
+        <section>
+            <h2>Willkommen</h2>
 
-</main>
+            <p>
+                Ich biete hochwertigen Honig aus eigener Imkerei an.
+                Bei Interesse oder Fragen freue ich mich über Ihre Kontaktaufnahme.
+            </p>
 
-<footer>
-    © 2026 Fabian Roth
-</footer>
+            <p>
+                Frischer Honig direkt vom Röderhof in Leimen.
+            </p>
+        </section>
+
+        <section>
+            <h2>Kontakt</h2>
+
+            <div class="contact">
+                <strong>Fabian Roth</strong><br>
+                Röderhof 11<br>
+                66978 Leimen<br><br>
+
+                Telefon:
+                <a href="tel:+4915787309872">+4915787309872</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        © 2026 Fabian Roth
+    </footer>
 
 </body>
+
 </html>
