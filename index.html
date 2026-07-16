@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fabian Roth | Honig aus Leimen</title>
-
+    <link relvg
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: #f8f7f2;
-            color: #333;
-        }
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+    background-color: #fff8dc;
+
+    background-image:
+        linear-gradient(30deg, #f2c94c 12%, transparent 12.5%, transparent 87%, #f2c94c 87.5%, #f2c94c),
+        linear-gradient(150deg, #f2c94c 12%, transparent 12.5%, transparent 87%, #f2c94c 87.5%, #f2c94c),
+        linear-gradient(90deg, #f5d76e 2%, transparent 2.5%, transparent 97%, #f5d76e 98%);
+    background-size: 80px 140px;
+
+    color: #333;
+}
 
         header {
             background: #d4a017;
@@ -58,10 +67,30 @@
         a:hover {
             text-decoration: underline;
         }
+    .bee {
+    position: fixed;
+    font-size: 40px;
+    z-index: 1000;
+    pointer-events: none;
+
+    animation:
+        fly 20s linear infinite,
+        flap 0.2s ease-in-out infinite alternate;
+}
+
+@keyframes flap {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+}
     </style>
 </head>
 <body>
-
+<div class="bee">🐝</div>
 <header>
     <h1>Fabian Roth</h1>
     <p>Regionaler Honig aus Leimen</p>
