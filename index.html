@@ -197,8 +197,11 @@
             x += (targetX - x) * speed;
             y += (targetY - y) * speed;
 
-            const angle =
-                Math.atan2(targetY - y, targetX - x);
+           if (targetX < x) {
+                bee.style.transform = "scaleX(-1)";
+                } else {
+                bee.style.transform = "scaleX(1)";
+                }
 
             const wobble =
                 Math.sin(Date.now() * 0.015) * 6;
