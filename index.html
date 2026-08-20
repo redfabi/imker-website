@@ -7,7 +7,7 @@
 
     <title>Imkerei Röderhof | Fabian Roth</title>
 
-   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    /favicon.svg
 
     <style>
         body {
@@ -23,11 +23,11 @@
             color: white;
             text-align: center;
             padding: 60px 20px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
 
         main {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 40px auto;
             padding: 0 20px;
         }
@@ -37,16 +37,12 @@
             padding: 25px;
             margin-bottom: 20px;
             border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
         h1,
         h2 {
             margin-top: 0;
-        }
-
-        .contact {
-            line-height: 1.8;
         }
 
         a {
@@ -65,51 +61,52 @@
             color: #666;
         }
 
-        .bee {
+        .contact {
+            line-height: 1.8;
+        }
+
+        /* Foto-Bereich */
+
+        .hero-photo {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .hero-placeholder {
+            height: 420px;
+            border-radius: 12px;
+            background: linear-gradient(
+                135deg,
+                #ececec,
+                #d8d8d8
+            );
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 1.4rem;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        /* Biene */
+
+        #bee {
             position: fixed;
-            font-size: 36px;
-            z-index: 1000;
+            width: 110px;
+            height: auto;
+            z-index: 9999;
             pointer-events: none;
-            animation:
-                fly 18s linear infinite,
-                flap 0.2s ease-in-out infinite alternate;
-
+            left: -150px;
+            top: 100px;
+            transform-origin: center center;
+            filter: drop-shadow(3px 4px 4px rgba(0,0,0,0.35));
         }
 
-        @keyframes fly {
-            0% {
-                left: -50px;
-                top: 120px;
-            }
-
-            25% {
-                left: 25%;
-                top: 220px;
-            }
-
-            50% {
-                left: 50%;
-                top: 80px;
-            }
-
-            75% {
-                left: 75%;
-                top: 250px;
-            }
-
-            100% {
-                left: 110%;
-                top: 150px;
-            }
-        }
-
-        @keyframes flap {
-            from {
-                transform: scaleX(-1) scale(1);
-            }
-
-            to {
-                transform: scaleX(-1) scale(1.1);
+        @media (max-width: 768px) {
+            #bee {
+                width: 70px;
             }
         }
     </style>
@@ -117,12 +114,19 @@
 
 <body>
 
-    <div class="bee">🐝</div>
+    bee1.webp
 
     <header>
         <h1>Imkerei Röderhof</h1>
         <p>Regionaler Honig aus Leimen</p>
     </header>
+
+    <section class="hero-photo">
+        <div class="hero-placeholder">
+            Hier kommt später das Breitbild von Fabian Roth
+            an den Bienenvölkern hin.
+        </div>
+    </section>
 
     <main>
 
@@ -131,7 +135,8 @@
 
             <p>
                 Ich biete hochwertigen Honig aus eigener Imkerei an.
-                Bei Interesse oder Fragen freue ich mich über Ihre Kontaktaufnahme.
+                Bei Interesse oder Fragen freue ich mich über Ihre
+                Kontaktaufnahme.
             </p>
 
             <p>
@@ -147,8 +152,10 @@
                 Röderhof 11<br>
                 66978 Leimen<br><br>
 
-               E-Mail:
-                <a href="mailto:fabian@imkerei-roederhof.de">fabian@imkerei-roederhof.de</a>
+                E-Mail:
+                fabian@imkerei-roederhof.de">
+                    fabian@imkerei-roederhof.de
+                </a>
             </div>
         </section>
 
@@ -157,6 +164,72 @@
     <footer>
         © 2026 Fabian Roth
     </footer>
+
+    <script>
+
+        const bee = document.getElementById("bee");
+
+        const frames = [
+            "bee1.webp",
+            "bee2.webp",
+            "bee3.webp",
+            "bee4.webp",
+            "bee5.webp",
+            "bee6.webp"
+        ];
+
+        let frameIndex = 0;
+
+        setInterval(() => {
+            bee.src = frames[frameIndex];
+            frameIndex = (frameIndex + 1) % frames.length;
+        }, 70);
+
+
+        let x = -150;
+        let y = 200;
+
+        let targetX = Math.random() * window.innerWidth;
+        let targetY = Math.random() * window.innerHeight * 0.8;
+
+        function flyBee() {
+
+            const speed = 0.008;
+
+            x += (targetX - x) * speed;
+            y += (targetY - y) * speed;
+
+            const angle =
+                Math.atan2(targetY - y, targetX - x);
+
+            const wobble =
+                Math.sin(Date.now() * 0.015) * 6;
+
+            bee.style.left = x + "px";
+            bee.style.top = (y + wobble) + "px";
+
+            bee.style.transform =
+                `rotate(${angle}rad)`;
+
+            const distance =
+                Math.hypot(targetX - x, targetY - y);
+
+            if (distance < 40) {
+
+                targetX =
+                    Math.random() * window.innerWidth;
+
+                targetY =
+                    Math.random() *
+                    (window.innerHeight * 0.8);
+            }
+
+            requestAnimationFrame(flyBee);
+        }
+
+        flyBee();
+
+    </script>
 
 </body>
 
