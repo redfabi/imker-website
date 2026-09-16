@@ -67,19 +67,25 @@
 
         /* Foto-Bereich */
 
-        .hero-photo {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
-    
+     .hero-photo {
+    height: 320px;
+    overflow: hidden;
+    border-radius: 12px;
+    max-width: 1200px;
+    margin: 30px auto;
+}
 
-       .hero-image {
-    width: 100%;
-    height: clamp(250px, 35vw, 420px);
+.hero-image {
+    height: 100%;
+    width: auto;
+    min-width: 100%;
     object-fit: cover;
-    object-position: center 40%;
-    }
+    object-position: center center;
+    display: block;
+
+    margin-left: auto;
+    margin-right: auto;
+}
 
         .hero-placeholder {
             height: 420px;
