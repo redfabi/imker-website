@@ -73,19 +73,13 @@
             padding: 0 20px;
         }
     
-    
-    
-        .hero-photo {
-        height: 320px;
-        overflow: hidden;
-        border-radius: 12px;
-        }
 
-        .hero-image {
-        height: 100%;
-        width: auto;
-        display: block;
-}
+       .hero-image {
+    width: 100%;
+    height: clamp(250px, 35vw, 420px);
+    object-fit: cover;
+    object-position: center 40%;
+    }
 
         .hero-placeholder {
             height: 420px;
